@@ -1,0 +1,30 @@
+{% extends "pari/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+ 
+<div class="container" style="margin-top: 5%;">
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+  
+                <legend class="border-bottom mb-4">Se Connecter</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Connexion </button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Vous n'avez pas de  Compte ?<a href="{% url 'register' %}" class="ml-2" >Inscription</a>
+            </small>
+        </div>
+    </div>
+  
+ </div>
+</div>
+ 
+
+{% endblock content %}

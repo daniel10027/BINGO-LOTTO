@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type = "text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'pari/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.css">
+  </head>
+<link type="text/css" rel="stylesheet" href="https://www.secretsdujeu.com/styles/loto.css">
+
+<script type="text/javascript" src="https://www.secretsdujeu.com/scripts/loto.asp"></script>
+    
+    {% if title %}
+    <title>BINGO- {{ title }}</title>
+{% else %}
+   <title>BINGO-LOTTO</title>
+{% endif %}
+</head>
+<body>
+    <div >
+      
+        <nav>
+            <img src="{% static 'pari/logo.jpeg' %}" style="border-radius:100%;height: 60px;width: 60px;float: left;margin-left: 5px;">
+           <center>
+             <ul>
+               <li><a href="{% url 'pari-home' %}"><i class="fa fa-home"></i><span>Accueil</span></a></li>
+              <li><a href="{% url 'pari-forum' %}"><i class="fa fa-book"></i><span>Forum</span></a></li>
+              <li><a href="{% url 'pari-resultat' %}"><i class="fa fa-money"></i><span>Resultats</span></a></li>
+              {% if user.is_staff %}
+                       <li><a href="{% url 'pari-tiquet' %}"><i class="fa fa-pencil"></i><span>Les Pari</span></a></li>
+                       <li><a href="/admin/"><i class="fa fa-pencil"></i><span>Gestion</span></a></li>
+                    {% endif %}
+                <!-- First Tier Drop Down -->
+                       
+                </li>
+                {% if user.is_authenticated %}
+                  <li><a href="{% url 'profile' %}"><i class="fa fa-user"></i><span>Profile</span></a></li>
+                  <li><a href="{% url 'post-create' %}"><i class="fa fa-pencil"></i><span>Poste</span></a></li>
+                  <li><a href="{% url 'pari-create' %}"><i class="fa fa-pencil"></i><span>Nouveau Pari</span></a></li>
+                  <li><a href="{% url 'logout' %}"><span>Deconnexion</span></a></li>
+        
+                {% else %}
+                  <li><a href="{% url 'login' %}"><i class="fa fa-user"></i><span>Connexion</span></a></li>
+                  <li><a href="{% url 'register' %}"><i class="fa fa-book"></i><span>Inscription</span></a></li>
+                {% endif %}
+              </center>   
+        </nav>
+      
+        </div>
+    
+    <div >
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+     
+
+    
+ 
+      
+          {% block content %}
+
+          {% endblock %}
+
+       
+      
+       
+  
+
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+
+<script type = "text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+</body>
+</html> 

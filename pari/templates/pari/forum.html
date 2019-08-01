@@ -1,0 +1,83 @@
+{% extends "pari/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container" style="margin-top: 8%;">
+
+    <div class="main-section">
+        <div class="head-section">
+          <div class="headLeft-section">
+            
+          </div>
+          <div class="headRight-section">
+            <div class="headRight-sub">
+              <h3>Bienvenue sur le Bingo-blog</h3>
+              <small>Le Forum N°1 de touts les parieur</small>
+            </div>
+          </div>
+        </div>
+        <div class="body-section">
+            <div class="left-section mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul>
+                    <div align="center" style="display:inline-block;width:160px;margin-top: 20%;margin-left: 17%;">
+                        <script type="text/javascript">
+                          Loto_ShowResultats();
+                        </script>
+                        <a class="Provider" title="Resultat Loto fourni par les Secrets du Jeu" href="https://www.secretsdujeu.com/page/jeux_loto_resultats.html" target="_blank">Resultat Tirage Millionnaire </a>
+                </div> 
+
+              </div>
+          <div class="right-section">
+            <div class="message mCustomScrollbar" data-mcs-theme="minimal-dark">
+              <ul>
+              {% for post in posts %}
+                  {% if user.is_authenticated %}
+
+                    <li class="msg-right">
+                        <div class="msg-right-sub">
+                          <img src="{{ post.auteur.profile.image.url }}">
+                          <div class="msg-desc">
+                          <h7 style="color:brown" >Publié par : </h7>{{ post.auteur }}<br>
+                          <h7 style="color:brown" >Sujet : </h7>{{ post.titre }}<br>
+                          <h7 style="color:brown" >Message : </h7> <br>
+                            <p>{{ post.contenu }}</p>
+                          </div>
+                          <small>{{ post.datepost }}</small>
+                        </div>
+                      </li>
+                        
+                  {% else %}
+                         
+                 
+                        <li class="msg-left">
+                          <div class="msg-left-sub">
+                            <img src="{{ post.auteur.profile.image.url }}">
+                            <div class="msg-desc">
+                            <h7 style="color:brown" >Publié par </h7>:{{ post.auteur }}<br>
+                            <h7 style="color:brown" >Sujet:</h7>{{ post.titre }}<br>
+                            <h7 style="color:brown" >Message:</h7> <br>
+                              <p>{{ post.contenu }}</p>
+                            </div>
+                            <small>{{ post.datepost }}</small>
+                          </div>
+                        </li>
+                  {% endif %}
+               {% endfor %}
+               
+              
+              </ul>
+            </div>
+            <div class="right-section-bottom">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+	
+    </div>
+   
+
+          
+{% endblock content %}
+

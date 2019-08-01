@@ -1,0 +1,114 @@
+
+
+{% extends "pari/base.html" %}
+{% load static %}
+
+{% block content %}
+
+            <div id="slider" style="margin-top: 2%">
+                    <figure>
+                    
+                    <img src="{% static 'pari/images/lotto.jpg' %}" class="img12" alt>
+                    <img src="{% static 'pari/images/lotto1.jpg' %}" class="img12" alt>
+                    <img src="{% static 'pari/images/lotto2.jpg' %}" class="img12" alt>
+                    
+                    
+                    </figure>
+                </div>
+            <div>
+     <section >	
+            <div class="content" id="lolo">
+                <h2 style="font-family: Times, Times New Roman, serif;">
+                    BIENVENUE AU BINGO-LOTTO
+                </h2>
+                
+            
+            </div>	
+     </section>
+            </div>
+           
+ <center> <h3 style="box-shadow: 2px 2px 2px 2px;"> Liste des Lotteries Ouvertes</h3></center>       
+    
+<div id="mere">
+        <div class="letter" id="droite" class="fils1">
+             
+                <center><h3>BINGO</h3></center>
+                    <p>Bienvenue au BINGO lotto.</p>
+                    <p>Vous avez la possibilité de parier sur 2 numeros parmis 90 pour le tirage National et 1 numero parmis 49 pour le tirage Etoile.</p>
+                    <p> Les pari sont lancé touts les jours de 08H à 17h30 et les resultats sont disponible dès 19H30</p>
+                    <p>Rien de plus simple , pour parier vous avez juste à crrer votre compte et mentionner le nom du tirage dans la rubrique Nouveau pari puis choisir vos numeros</p>
+                    <p>Bonne Chance !</p>
+                    <br>
+                    <br>
+                   <i><b><h3 id="lili">[BINGO-LOTTO ]</h3></b></i> 
+        </div>
+      
+         <div id="gauche" class="fils1" style="margin-left: 50%;margin-top: -37%;">
+                   
+              {% for lotterie in lotteries %}
+                   
+                                <div class="ticket-wrapper" >
+                                    <table class="ticket-table">
+                                        <tr>
+                                            <td class="first-col">
+                                                
+                                        <div class="ticket-name-div">
+                                            <span class="ticket-event-longtitle">LOTTO BINGO <h3></h3></span><small> </small>
+                                        </div>
+                                        
+                                        <div class="ticket-event-details">
+                                            <table>
+                                                <tr>
+                                                    <td class="first-col">
+                                                        <div class="ticket-info" style="color:black;">
+                                                            <b><i> Nom de la Lotterie : {{ lotterie.nom }}</i></b> 
+                                                        </div>
+                                                        
+                                                        <div class="ticket-title"  style="color:black;">
+                                                            <b><i>Nombre de numero Numero : 90</i></b>  
+                                                        </div>
+                                                        
+                                                        <div class="ticket-info"  style="color:black;">
+                                                            <b><i>  Date d'ouverture: {{ lotterie.ouverture }}</i></b>
+
+                                                            <b><i> Date de fermeture: {{ lotterie.fermeture }}</i></b> 
+                                                        </div>
+                                                        
+                                                    </td>
+                                                    
+                                                    <td class="second-col">
+                                                        <div class="ticket-venue" style="color:black;">
+                                                        <b><i> Description :</i></b> 
+                                                        </div>
+                                                        
+                                                        <div class="ticket-venue"  style="color:black;">
+                                                        <b><i>{{ lotterie.description }}</i></b> 
+                                                        </div>
+                                                        
+                                                        
+                                                        
+                                                    </td>
+                                                    
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        
+                                    
+                                    </td>
+                                    
+                                    
+                                </tr>
+                                    </table>
+                            
+                                </div>
+                   
+                     {% endfor %}
+               </div>
+              
+       
+     </div>    
+            
+ </center>
+            
+       
+{% endblock content %}

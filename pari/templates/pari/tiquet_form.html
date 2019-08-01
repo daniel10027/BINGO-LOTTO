@@ -1,0 +1,25 @@
+{% extends "pari/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  
+  <div class="container" style="margin-top: 5%;">
+      <h4 style="color:salmon"><marque>Les pari sont ouverts touts les jours de 08h à 17h , les resultats sont disponibles dès 19h30 !</marque></h4>
+        <div class="content-section">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+          
+                        <legend class="border-bottom mb-4">Faite votre Pari</legend>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Parier ! </button>
+                    </div>
+                </form>
+               
+            </div>
+          
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,60 @@
+{% extends "pari/base.html" %}
+{% load static %}
+{% block content %}
+    <div id="pld" class="container">
+    
+    </div>
+  <div class="container">
+      <div class="container" style="margin-top: 5%;"><h3>Les resultats des Tirages sont Disponible dès 17H30</h3></div>
+    {% for resultat in resultats %}
+
+    
+     
+        
+        <div class="ticket-wrapper">
+            <table class="ticket-table">
+                <tr>
+                    <td class="first-col">
+                        
+                <div class="ticket-name-div">
+                    <span class="ticket-event-longtitle" style="color:black">LOTTO BINGO <h3></h3></span><small> </small>
+                </div>
+                
+                <div class="ticket-event-details">
+                    <table>
+                        <tr>
+                            <td class="first-col">
+                                <div class="ticket-info" style="background-color:  #2cb4d6;color:black">
+                                   <i><b>Nom de la Lotterie : {{ resultat.nom }}</b></i> 
+                                </div>
+                                
+                                <div class="ticket-title" style="background-color:  #2cb4d6;color:black">
+                                    <i><b> Nombre de numero Numero : 90</b></i><br>
+                                    <i><b>Numeros Gagnant :  {{ resultat.numero_gagnat }}</b></i>
+                                </div>
+                                
+                                <div class="ticket-info" style="background-color:  #2cb4d6;color:black">
+                                    <i><b>Date d'ouverture: {{ resultat.ouverture }} | </b></i>
+                                    <i><b> Date de fermeture: {{ resultat.fermeture }}</b></i>
+                                    
+                                </div>
+                                
+                            </td>
+                            
+                          
+                        </tr>
+                    </table>
+                </div>
+                
+            
+            </td>
+            
+            
+        </tr>
+            </table>
+    
+        </div>
+    
+ {% endfor %}
+       
+{% endblock content %}

@@ -1,0 +1,80 @@
+{% extends "pari/base.html" %}
+{% load static %}
+{% block content %}
+  <div class="container">
+    {% for tiquet in tiquets %}
+                  {% if user.is_authenticated %}
+                        
+                      <div class="ticket-wrapper2">
+                        <table class="ticket-table">
+                            <tr>
+                                <td class="first-col">
+                                    
+                                    <div class="ticket-name-div">
+                                        <span class="ticket-event-longtitle">LOTTO BINGO {{ tiquet.Lotterie }}</span><small>  NB:(Tiquet valide de jours)</small>
+                                    </div>
+                                  
+                                    <div class="ticket-event-details">
+                                        <table>
+                                            <tr>
+                                                <td class="first-col">
+                                                    <div class="ticket-title" style="color: black">
+                                                        <b>  Nom du joueur : {{ tiquet.recu }}</b>  
+                                                    </div>
+                                                    
+                                                    <div class="ticket-info" style="color: black">
+                                                        <b> Numero choisis : {{ tiquet.numero1 }} et {{ tiquet.numero2 }}</b>  
+                                                    </div>
+                                                  
+                                                    <div class="ticket-venue" style="color: black">
+                                                        <b> Tiquet généré le : {{ tiquet.datepari }}</b> 
+                                                    </div>
+                                                    
+                                                </td>
+                                                
+                                                <td class="second-col">
+                                                    <div class="ticket-venue" style="color: black">
+                                                        <b>Montant de la Mise:</b>   
+                                                         
+                                                      
+                                                    </div>
+                                                  
+                                                    <div class="ticket-venue" style="color: black">
+                                                        <b> {{ tiquet.mise }}</b> 
+                                                    </div>
+                                                  
+                                                    <div class="ticket-venue" style="color: black">
+                                                       <b>Gain si victoire : Mise x 50</b> 
+                                                    </div>
+                                                    
+                                                </td>
+                                              
+                                            </tr>
+                                        </table>
+                                    </div>
+                                  
+                                
+                                </td>
+                                
+                              
+                            </tr>
+                        </table>
+                      
+                    </div>
+                    
+
+                 
+                        
+                  {% else %}
+                         
+                        <h1>blabla</h1>
+                        
+                  {% endif %}
+    {% endfor %}
+<div class="container">
+  
+  
+</div>
+   
+
+{% endblock content %}

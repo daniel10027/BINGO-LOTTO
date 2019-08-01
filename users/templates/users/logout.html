@@ -1,0 +1,18 @@
+{% extends "pari/base.html" %}
+
+
+{% block content %}
+  <div class="container" style="margin-top: 5%;">
+
+    <h2>Vous avez été déconnecté </h2>
+ 
+      <div class="border-top pt-3">
+          <small class="text-muted">
+            <center><a href="{% url 'login' %}"  >Se reconnecter</a></center> 
+          </small>
+      </div>
+     </div>
+  </div>
+
+
+{% endblock content %}
