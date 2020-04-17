@@ -10,13 +10,13 @@ If you are lucky enough to find two winning numbers among
 those that you have chosen then you win according to your initial bet.
 ```
 # To launch the project
-```js
--[x] git clone https://github.com/daniel10027/BINGO-LOTTO.git
--[x] pip install-r requirement.txt 
--[x] python manage.py migrate & & python manage.py makemigrations
--[x] python manage.py createsuperuser
--[x] python manage.py runserver 
-```
+
+- [x] [git clone https://github.com/daniel10027/BINGO-LOTTO.git]()
+- [x] [pip install-r requirement.txt]() 
+- [x] [python manage.py migrate & & python manage.py makemigrations]() 
+- [x] [python manage.py createsuperuser]()
+- [x] [python manage.py runserver]()
+
 
 ## Happy Hacking 
 
