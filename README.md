@@ -1,6 +1,6 @@
 # Projet-lotto
      
-```console
+```js
 Bingo lotto is my first application made with the
 Python django framework.
 It is an application for sports betting in which 
